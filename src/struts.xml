@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!DOCTYPE struts PUBLIC
         "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
         "http://struts.apache.org/dtds/struts-2.3.dtd">
@@ -18,7 +17,10 @@
             <result name="success" type="tiles">showAddForm.tiles</result>
         </action>
 
-
-
+        <action name="register" class="main.java.com.soft.usermanager.action.RegisterAction" method="execute">
+            <result name="success" type="tiles">showList.tiles</result>
+            <result name="error" type="tiles">showAddForm.tiles</result>
+            <result name="input" type="tiles">showList.tiles</result>
+        </action>
     </package>
 </struts>

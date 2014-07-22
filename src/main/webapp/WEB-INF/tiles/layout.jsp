@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html;" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<%@ taglib prefix="s" uri="/struts-tags"%>
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <html lang="en">
 <head>
     <meta charset="utf-8">
