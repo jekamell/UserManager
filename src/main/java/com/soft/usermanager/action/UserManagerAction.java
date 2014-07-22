@@ -8,7 +8,7 @@ public class UserManagerAction {
         return "success";
     }
 
-    public String add() {
+    public String getAddForm() {
 
         return "success";
     }

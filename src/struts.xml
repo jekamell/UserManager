@@ -14,8 +14,8 @@
             <result name="success" type="tiles">showList.tiles</result>
         </action>
 
-        <action name="add" class="main.java.com.soft.usermanager.action.UserManagerAction" method="add">
-            <result name="success" type="tiles">showUserForm.tiles</result>
+        <action name="add" class="main.java.com.soft.usermanager.action.UserManagerAction" method="getAddForm">
+            <result name="success" type="tiles">showAddForm.tiles</result>
         </action>
 
 
