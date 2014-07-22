@@ -10,9 +10,14 @@
             <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
         </result-types>
 
-        <action name="list" method="getList" class="main.java.com.soft.usermanager.action.ListAction">
+        <action name="list" class="main.java.com.soft.usermanager.action.UserManagerAction" method="getList" >
             <result name="success" type="tiles">showList.tiles</result>
         </action>
+
+        <action name="add" class="main.java.com.soft.usermanager.action.UserManagerAction" method="add">
+            <result name="success" type="tiles">showUserForm.tiles</result>
+        </action>
+
 
 
     </package>
