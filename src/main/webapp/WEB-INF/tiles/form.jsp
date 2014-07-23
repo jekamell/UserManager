@@ -1,12 +1,13 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
-<s:form action="register">
+<legend>Add user</legend>
 
-    <s:textfield name="model.login" label="login" />
-    <s:textfield  name="model.password" label="Password" />
-    <s:textfield  name="model.nameFirst" label="First name" />
-    <s:textfield  name="model.nameLast" label="Last name" />
-    <s:textfield  name="model.email" label="E-mail" />
-    <s:textfield  name="model.phoneNumber" label="Phone" />
+<s:fielderror />
+
+<s:actionerror theme="bootstrap"/>
+<s:actionmessage theme="bootstrap"/>
+<s:fielderror theme="bootstrap"/>
+
+<s:form method="POST" action="reg" theme="bootstrap" cssClass="form-horizontal">
+    <s:textfield  name="userBean.login" label="login" />
     <s:submit/>
-
 </s:form>
