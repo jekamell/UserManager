@@ -4,7 +4,7 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="com.soft.usermanager.model.User" table="user" catalog="user_manager">
+    <class name="com.soft.usermanager.model.User" table="userBean" catalog="user_manager">
         <id name="id" type="java.lang.Long">
             <column name="id" />
             <generator class="identity" />
