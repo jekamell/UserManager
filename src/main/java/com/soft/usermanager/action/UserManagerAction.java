@@ -1,4 +1,4 @@
-package main.java.com.soft.usermanager.action;
+package com.soft.usermanager.action;
 
 public class UserManagerAction {
 

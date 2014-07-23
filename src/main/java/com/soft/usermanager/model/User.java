@@ -1,4 +1,4 @@
-package main.java.com.soft.usermanager.model;
+package com.soft.usermanager.model;
 
 public class User {
     private String login;

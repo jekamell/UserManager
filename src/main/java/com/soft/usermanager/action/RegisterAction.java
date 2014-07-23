@@ -1,8 +1,8 @@
-package main.java.com.soft.usermanager.action;
+package com.soft.usermanager.action;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
-import main.java.com.soft.usermanager.model.User;
+import com.soft.usermanager.model.User;
 
 public class RegisterAction extends ActionSupport implements ModelDriven<User> {
     private User user = new User();
