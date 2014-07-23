@@ -1,11 +1,23 @@
-package main.java.com.soft.usermanager.model;
+package com.soft.usermanager.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity(name="User")
+@Table(name="user")
 public class User {
+    @Id
+    private Long id;
     private String login;
     private String password;
+    @Column(name = "name_first")
     private String nameFirst;
+    @Column(name = "name_first")
     private String nameLast;
     private String email;
+    @Column(name = "phone")
     private Long phoneNumber;
 
     public String getLogin() {
@@ -56,7 +68,11 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
-    public boolean addUser() {
-        return false;
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

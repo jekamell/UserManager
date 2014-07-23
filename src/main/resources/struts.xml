@@ -5,21 +5,28 @@
 
 <struts>
     <constant name="struts.devMode" value="true" />
-
-    <package name="user-manager" extends="struts-default" namespace="/">
+    <package name="user-manager" extends="struts-default">
         <result-types>
             <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
         </result-types>
 
-        <action name="list" class="main.java.com.soft.usermanager.action.UserManagerAction" method="getList" >
+        <action name="*" class="com.soft.usermanager.action.UserManagerAction" method="listUsers" >
+            <result name="success" type="tiles">showList.tiles</result>
+        </action>
+        
+        <action name="list" class="com.soft.usermanager.action.UserManagerAction" method="listUsers" >
             <result name="success" type="tiles">showList.tiles</result>
         </action>
 
-        <action name="add" class="main.java.com.soft.usermanager.action.UserManagerAction" method="getAddForm">
+        <action name="/" class="com.soft.usermanager.action.UserManagerAction" method="listUsers" >
+            <result name="success" type="tiles">showList.tiles</result>
+        </action>
+
+        <action name="add" class="com.soft.usermanager.action.UserManagerAction" method="getAddForm">
             <result name="success" type="tiles">showAddForm.tiles</result>
         </action>
 
-        <action name="register" class="main.java.com.soft.usermanager.action.RegisterAction" method="execute">
+        <action name="register" class="com.soft.usermanager.action.RegisterAction" method="execute">
             <result name="success" type="tiles">showList.tiles</result>
             <result name="error" type="tiles">showAddForm.tiles</result>
             <result name="input" type="tiles">showList.tiles</result>
