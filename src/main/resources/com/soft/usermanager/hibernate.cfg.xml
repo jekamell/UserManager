@@ -6,15 +6,16 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/user_manager</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
         <property name="hibernate.connection.username">pfsoft</property>
         <property name="hibernate.connection.password">pfs0ft</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/user_manager</property>
-        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <property name="hibernate.current_session_context_class">thread</property>
         <property name="show_sql">true</property>
         <property name="format_sql">true</property>
         <property name="use_sql_comments">false</property>
-        <property name="hibernate.current_session_context_class">thread</property>
 
-        <!--<mapping resource="/hibernate/"-->
+        <mapping class="com.soft.usermanager.model.User" />
     </session-factory>
 </hibernate-configuration>
