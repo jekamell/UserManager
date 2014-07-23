@@ -1,8 +1,12 @@
 package com.soft.usermanager.listener;
 
 import org.hibernate.SessionFactory;
+import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.cfg.Configuration;
+
+import java.io.File;
 import java.net.URL;
+import java.util.Arrays;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
@@ -10,24 +14,29 @@ import javax.servlet.ServletContextListener;
 public class HibernateListener implements ServletContextListener {
 
     private Configuration config;
-    private SessionFactory factory;
-    private String path = "/hibernate.cfg.xml";
-    private static Class clazz = HibernateListener.class;
+    private SessionFactory sessionFactory;
+    private String path = "/resources/hibernate.cfg.xml";
 
-    public static final String KEY_NAME = clazz.getName();
+    public static final String KEY_NAME = HibernateListener.class.getName();
 
     @Override
-    public void contextInitialized(ServletContextEvent sce) {
-        try {
-            URL url = HibernateListener.class.getResource(path);
-            config = new Configuration().configure(url);
-            factory = config.buildSessionFactory();
-            sce.getServletContext().setAttribute(KEY_NAME, factory);
-        } catch (Exception ignored) {}
+    public void contextDestroyed(ServletContextEvent event) {
+        if ( sessionFactory != null ) {
+            sessionFactory.close();
+        }
     }
 
     @Override
-    public void contextDestroyed(ServletContextEvent sce) {
-
+    public void contextInitialized(ServletContextEvent event) {
+        try {
+            URL url = HibernateListener.class.getResource("/com/soft/");
+            System.out.println("URL " + url);
+            config = new AnnotationConfiguration().configure(url);
+            sessionFactory = config.buildSessionFactory();
+            event.getServletContext().setAttribute(KEY_NAME, sessionFactory);
+        } catch (Exception e) {
+            System.out.println("!!!");
+            System.out.println(e.getMessage());
+        }
     }
 }

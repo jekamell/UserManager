@@ -23,4 +23,8 @@
         <listener-class>org.apache.struts2.tiles.StrutsTilesListener</listener-class>
     </listener>
 
+    <listener>
+        <listener-class>com.soft.usermanager.listener.HibernateListener</listener-class>
+    </listener>
+
 </web-app>

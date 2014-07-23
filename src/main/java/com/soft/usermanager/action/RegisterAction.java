@@ -12,11 +12,7 @@ public class RegisterAction extends ActionSupport implements ModelDriven<User> {
     }
 
     public String execute() {
-        if (user.addUser()) {
-            return SUCCESS;
-        } else {
-            return ERROR;
-        }
+        return SUCCESS;
     }
 
     public void validate() {
