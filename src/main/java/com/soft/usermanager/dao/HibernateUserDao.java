@@ -9,4 +9,13 @@ public class HibernateUserDao extends DaoBase implements UserDao {
     public List<User> getAll() {
         return (List<User>)getSession().createQuery("from User").list();
     }
+
+    @Override
+    public User getByLogin(String login) {
+        List list = getSession().createQuery("from User where login=:login").setParameter("login", login).list();
+        if (list.isEmpty()) {
+            return null;
+        }
+        return (User) list.get(0);
+    }
 }

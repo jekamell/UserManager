@@ -2,12 +2,15 @@ package com.soft.usermanager.action;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.soft.usermanager.model.User;
+import com.soft.usermanager.service.UserService;
+import com.soft.usermanager.service.UserServiceImpl;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class RegisterAction extends ActionSupport {
     private User user = new User();
+    private UserService userService = new UserServiceImpl();
 
     public String execute() {
         return SUCCESS;
@@ -56,9 +59,9 @@ public class RegisterAction extends ActionSupport {
             addFieldError("user.login", "Username already exists");
         }
     }
-    // mock now
+
     private boolean isLoginUnique(String login) {
-        return false;
+        return userService.getByLogin(login) == null;
     }
 
     private String getRequiredAttributeErrorMessage(String attribute) {
