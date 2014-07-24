@@ -25,6 +25,7 @@
     <![endif]-->
 
     <sb:head/>
+    <s:head />
 </head>
 <body>
     <tiles:insertAttribute name="header" />

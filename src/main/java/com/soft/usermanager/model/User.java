@@ -1,9 +1,6 @@
 package com.soft.usermanager.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity(name = "User")
 @Table(name = "user")
@@ -12,6 +9,8 @@ public class User {
     private Long id;
     private String login;
     private String password;
+    @Transient
+    private String passwordRepeat;
     @Column(name = "name_first")
     private String nameFirst;
     @Column(name = "name_last")
@@ -34,6 +33,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getPasswordRepeat() {
+        return passwordRepeat;
+    }
+
+    public void setPasswordRepeat(String passwordRepeat) {
+        this.passwordRepeat = passwordRepeat;
     }
 
     public String getNameFirst() {
