@@ -9,7 +9,7 @@ import java.util.List;
 public class HibernateUserDao extends DaoBase implements UserDao {
     @Override
     public List<User> getAll() {
-        return (List<User>)getSession().createQuery("from User").list();
+        return (List<User>)getSession().createQuery("from User where isEnabled=true").list();
     }
 
     @Override

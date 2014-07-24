@@ -35,8 +35,13 @@
             <result name="input" type="tiles">showEditForm.tiles</result>
         </action>
 
+        <action name="delete" class="com.soft.usermanager.action.Del" method="execute">
+            <result name="success" type="redirectAction">list</result>
+            <result name="input" type="redirectAction">list</result>
+        </action>
+
         <action name="reg" class="com.soft.usermanager.action.Register" method="execute">
-            <result name="success" type="tiles">showList.tiles</result>
+            <result name="success" type="redirectAction">list</result>
             <result name="input" type="tiles">showAddForm.tiles</result>
         </action>
     </package>

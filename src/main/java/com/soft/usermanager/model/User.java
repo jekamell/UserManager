@@ -19,6 +19,8 @@ public class User {
     private String email;
     @Column(name = "phone")
     private Long phoneNumber;
+    @Column(name = "is_enabled")
+    private Boolean isEnabled;
 
     public String getLogin() {
         return login;
@@ -82,5 +84,13 @@ public class User {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Boolean getIsEnabled() {
+        return isEnabled;
+    }
+
+    public void setIsEnabled(Boolean isEnabled) {
+        this.isEnabled = isEnabled;
     }
 }

@@ -28,7 +28,9 @@
                 <a href="/edit?id=<s:property value="id" />">
                     <span class="glyphicon glyphicon-edit"></span>
                 </a>
-                <span class="glyphicon glyphicon-trash"></span>
+                <a href="/delete?id=<s:property value="id" />">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </a>
             </td>
         </tr>
 
