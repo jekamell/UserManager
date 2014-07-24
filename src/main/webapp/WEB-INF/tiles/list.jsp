@@ -1,6 +1,6 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
-<a href="add" class="btn btn-primary">Add userBean</a>
-<h1>User list</h1>
+<legend>User list</legend>
+<a href="add" class="btn btn-primary">Add user</a>
 <table class="table table-striped">
     <tr>
         <th>#</th>
