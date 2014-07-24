@@ -8,7 +8,7 @@ import com.soft.usermanager.service.UserServiceImpl;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class RegisterAction extends ActionSupport {
+public class Register extends ActionSupport {
     private User user = new User();
     private UserService userService = new UserServiceImpl();
 

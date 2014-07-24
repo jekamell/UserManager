@@ -13,20 +13,9 @@ import org.hibernate.SessionFactory;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserManagerAction extends ActionSupport implements ModelDriven {
-    User user = new User();
+public class UserManagerAction extends ActionSupport {
     List users = new ArrayList<User>();
     UserService userService = new UserServiceImpl();
-
-    public String getAddForm() {
-
-        return "success";
-    }
-
-    @Override
-    public Object getModel() {
-        return user;
-    }
 
     public String listUsers() throws Exception {
         users = userService.getAll();

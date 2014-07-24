@@ -30,4 +30,23 @@ public class HibernateUserDao extends DaoBase implements UserDao {
 
         tx.commit();
     }
+
+    @Override
+    public User getById(Long id) {
+        List list = getSession().createQuery("from User where id=:id").setParameter("id", id).list();
+        if (list.isEmpty()) {
+            return null;
+        }
+        return (User) list.get(0);
+    }
+
+    @Override
+    public void update(User user) {
+        Session session = getSession();
+        Transaction tx = session.beginTransaction();
+
+        session.merge(user);
+
+        tx.commit();
+    }
 }

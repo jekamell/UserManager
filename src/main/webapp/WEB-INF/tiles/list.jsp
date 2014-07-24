@@ -25,7 +25,9 @@
             <td><s:property value="email" /></td>
             <td><s:property value="phoneNumber" /></td>
             <td>
-                <span class="glyphicon glyphicon-edit"></span>
+                <a href="/edit?id=<s:property value="id" />">
+                    <span class="glyphicon glyphicon-edit"></span>
+                </a>
                 <span class="glyphicon glyphicon-trash"></span>
             </td>
         </tr>
