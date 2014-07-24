@@ -1,6 +1,8 @@
 package com.soft.usermanager.dao;
 
 import com.soft.usermanager.model.User;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import java.util.List;
 
@@ -17,5 +19,15 @@ public class HibernateUserDao extends DaoBase implements UserDao {
             return null;
         }
         return (User) list.get(0);
+    }
+
+    @Override
+    public void add(User user) {
+        Session session = getSession();
+        Transaction tx = session.beginTransaction();
+
+        session.save(user);
+
+        tx.commit();
     }
 }

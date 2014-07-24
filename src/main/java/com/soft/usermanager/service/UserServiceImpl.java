@@ -18,4 +18,10 @@ public class UserServiceImpl implements UserService {
     public User getByLogin(String login) {
         return dao.getByLogin(login);
     }
+
+    @Override
+    public void add(User user) {
+        dao.add(user)
+        ;
+    }
 }

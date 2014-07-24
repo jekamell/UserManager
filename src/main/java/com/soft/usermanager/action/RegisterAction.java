@@ -13,6 +13,10 @@ public class RegisterAction extends ActionSupport {
     private UserService userService = new UserServiceImpl();
 
     public String execute() {
+        if (user != null) {
+            userService.add(user);
+        }
+
         return SUCCESS;
     }
 
