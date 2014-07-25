@@ -1,6 +1,14 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
-<legend>User list</legend>
+
+<legend>Users list</legend>
 <a href="add" class="btn btn-primary">Add user</a>
+
+<s:form action="find" theme="bootstrap" cssClass="form-inline pull-right">
+    <s:textfield name="query" placeholder="Search by login | phone number" />
+    <s:submit cssClass="btn btn-default" value="Search"/>
+</s:form>
+
+<br /><br />
 <table class="table table-striped">
     <tr>
         <th>#</th>

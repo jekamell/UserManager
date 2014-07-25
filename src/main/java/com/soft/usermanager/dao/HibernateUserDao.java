@@ -49,4 +49,11 @@ public class HibernateUserDao extends DaoBase implements UserDao {
 
         tx.commit();
     }
+
+    @Override
+    public List<User> getByLoginOrPhone(String param) {
+        return (List<User>)getSession()
+            .createQuery("From User where login like :query OR str(phoneNumber) like :query")
+            .setParameter("query", "%" + param + "%").list();
+    }
 }

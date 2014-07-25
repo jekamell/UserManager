@@ -15,6 +15,7 @@ import java.util.List;
 
 public class UserManagerAction extends ActionSupport {
     List users = new ArrayList<User>();
+    String query;
     UserService userService = new UserServiceImpl();
 
     public String listUsers() throws Exception {
@@ -29,5 +30,9 @@ public class UserManagerAction extends ActionSupport {
 
     public void setUsers(List users) {
         this.users = users;
+    }
+
+    public void setQuery(String query) {
+        this.query = query;
     }
 }

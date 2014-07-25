@@ -44,5 +44,9 @@
             <result name="success" type="redirectAction">list</result>
             <result name="input" type="tiles">showAddForm.tiles</result>
         </action>
+
+        <action name="find" class="com.soft.usermanager.action.Search" method="execute">
+            <result name="success" type="tiles">showList.tiles</result>
+        </action>
     </package>
 </struts>
