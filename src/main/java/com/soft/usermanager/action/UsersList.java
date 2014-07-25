@@ -13,7 +13,7 @@ import org.hibernate.SessionFactory;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserManagerAction extends ActionSupport {
+public class UsersList extends ActionSupport {
     List users = new ArrayList<User>();
     String query;
     UserService userService = new UserServiceImpl();
