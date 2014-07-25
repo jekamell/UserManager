@@ -1,7 +1,7 @@
 package com.soft.usermanager.service;
 
-import com.soft.usermanager.dao.HibernateUserDao;
-import com.soft.usermanager.dao.UserDao;
+import com.soft.usermanager.model.dao.HibernateUserDao;
+import com.soft.usermanager.model.dao.UserDao;
 import com.soft.usermanager.model.User;
 
 import java.util.List;

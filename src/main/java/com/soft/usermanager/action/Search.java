@@ -7,12 +7,10 @@ import com.soft.usermanager.service.UserServiceImpl;
 
 import java.util.List;
 
-public class Search extends ActionSupport {
+public class Search extends ControllerBase {
     private String query;
     private List<User> users;
-    private UserService userService = new UserServiceImpl();
 
-    @Override
     public String execute() throws Exception {
         if (getQuery() == null || getQuery().length() == 0) {
             users = userService.getAll();
@@ -20,7 +18,7 @@ public class Search extends ActionSupport {
             users = userService.getByLoginOrPhone(getQuery());
         }
 
-        return SUCCESS;
+        return ActionSupport.SUCCESS;
     }
 
     public String getQuery() {

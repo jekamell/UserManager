@@ -5,19 +5,17 @@ import com.soft.usermanager.model.User;
 import com.soft.usermanager.service.UserService;
 import com.soft.usermanager.service.UserServiceImpl;
 
-public class FormEdit extends ActionSupport {
+public class FormEdit extends ControllerBase{
     private String id;
     private User user;
-    private UserService userService = new UserServiceImpl();
 
-    @Override
-    public String execute() throws Exception {
+    public String execute() {
         if (getId() == null) {
-            return INPUT;
+            return ActionSupport.INPUT;
         }
         user = userService.getById(Long.parseLong(getId()));
 
-        return SUCCESS;
+        return ActionSupport.SUCCESS;
     }
 
     public String getId() {

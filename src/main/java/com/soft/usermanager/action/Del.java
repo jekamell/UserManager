@@ -5,25 +5,23 @@ import com.soft.usermanager.model.User;
 import com.soft.usermanager.service.UserService;
 import com.soft.usermanager.service.UserServiceImpl;
 
-public class Del extends ActionSupport {
+public class Del extends ControllerBase {
     private String id;
-    private UserService userService = new UserServiceImpl();
 
-    @Override
     public String execute() throws Exception {
         if (getId() == null) {
-            return INPUT;
+            return ActionSupport.INPUT;
         }
 
         User current = userService.getById(Long.parseLong(getId()));
         if (current == null) {
-            return INPUT;
+            return ActionSupport.INPUT;
         }
 
         current.setIsEnabled(false);
         userService.update(current);
 
-        return SUCCESS;
+        return ActionSupport.SUCCESS;
     }
 
     public String getId() {

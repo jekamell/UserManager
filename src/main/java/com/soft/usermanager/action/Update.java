@@ -5,15 +5,13 @@ import com.soft.usermanager.model.User;
 import com.soft.usermanager.service.UserService;
 import com.soft.usermanager.service.UserServiceImpl;
 
-public class Update extends ActionSupport {
+public class Update extends ControllerBase {
     private User user;
-    private UserService userService = new UserServiceImpl();
 
-    @Override
-    public String execute() throws Exception {
+    public String execute() {
         User current = userService.getById(user.getId());
         if (current == null) {
-            return INPUT;
+            return ActionSupport.INPUT;
         }
 
         current.setNameFirst(user.getNameFirst());
@@ -23,7 +21,7 @@ public class Update extends ActionSupport {
 
         userService.update(user);
 
-        return SUCCESS;
+        return ActionSupport.SUCCESS;
     }
 
     public User getUser() {

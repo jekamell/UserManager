@@ -13,7 +13,7 @@ import org.hibernate.SessionFactory;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UsersList extends ActionSupport {
+public class UsersList extends ControllerBase {
     List users = new ArrayList<User>();
     String query;
     UserService userService = new UserServiceImpl();
@@ -21,7 +21,7 @@ public class UsersList extends ActionSupport {
     public String listUsers() throws Exception {
         users = userService.getAll();
 
-        return SUCCESS;
+        return ActionSupport.SUCCESS;
     }
 
     public List getUsers() {

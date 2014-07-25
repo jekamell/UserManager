@@ -1,4 +1,4 @@
-package com.soft.usermanager.dao;
+package com.soft.usermanager.model.dao;
 
 import com.soft.usermanager.listener.HibernateListener;
 import org.apache.struts2.ServletActionContext;

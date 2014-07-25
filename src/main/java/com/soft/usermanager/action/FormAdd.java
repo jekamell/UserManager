@@ -3,11 +3,11 @@ package com.soft.usermanager.action;
 import com.opensymphony.xwork2.ActionSupport;
 import com.soft.usermanager.model.User;
 
-public class FormAdd extends ActionSupport {
+public class FormAdd extends ControllerBase{
     private User user = new User();
 
     public String execute() {
-        return SUCCESS;
+        return ActionSupport.SUCCESS;
     }
 
     public User getUser() {
