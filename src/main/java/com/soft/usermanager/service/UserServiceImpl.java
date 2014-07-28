@@ -1,0 +1,41 @@
+package com.soft.usermanager.service;
+
+import com.soft.usermanager.model.dao.HibernateUserDao;
+import com.soft.usermanager.model.dao.UserDao;
+import com.soft.usermanager.model.User;
+
+import java.util.List;
+
+public class UserServiceImpl implements UserService {
+    private UserDao dao = new HibernateUserDao();
+
+    @Override
+    public List<User> getAll() {
+        return dao.getAll();
+    }
+
+    @Override
+    public User getByLogin(String login) {
+        return dao.getByLogin(login);
+    }
+
+    @Override
+    public void add(User user) {
+        dao.add(user);
+    }
+
+    @Override
+    public User getById(Long id) {
+        return dao.getById(id);
+    }
+
+    @Override
+    public void update(User user) {
+        dao.update(user);
+    }
+
+    @Override
+    public List<User> getByLoginOrPhone(String param) {
+        return dao.getByLoginOrPhone(param);
+    }
+}

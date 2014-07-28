@@ -1,17 +1,17 @@
 package com.soft.usermanager.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity(name = "User")
 @Table(name = "user")
 public class User {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String login;
     private String password;
+    @Transient
+    private String passwordRepeat;
     @Column(name = "name_first")
     private String nameFirst;
     @Column(name = "name_last")
@@ -19,6 +19,8 @@ public class User {
     private String email;
     @Column(name = "phone")
     private Long phoneNumber;
+    @Column(name = "is_enabled")
+    private Boolean isEnabled;
 
     public String getLogin() {
         return login;
@@ -34,6 +36,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getPasswordRepeat() {
+        return passwordRepeat;
+    }
+
+    public void setPasswordRepeat(String passwordRepeat) {
+        this.passwordRepeat = passwordRepeat;
     }
 
     public String getNameFirst() {
@@ -74,5 +84,13 @@ public class User {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Boolean getIsEnabled() {
+        return isEnabled;
+    }
+
+    public void setIsEnabled(Boolean isEnabled) {
+        this.isEnabled = isEnabled;
     }
 }

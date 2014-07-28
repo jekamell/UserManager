@@ -16,7 +16,12 @@
 
     <definition name="showAddForm.tiles" extends="layout">
         <put-attribute name="title" value="Add User" />
-        <put-attribute name="body" value="/WEB-INF/tiles/form.jsp" />
+        <put-attribute name="body" value="/WEB-INF/tiles/form-add.jsp" />
+    </definition>
+
+    <definition name="showEditForm.tiles" extends="layout">
+        <put-attribute name="title" value="Update User" />
+        <put-attribute name="body" value="/WEB-INF/tiles/form-update.jsp" />
     </definition>
 
 

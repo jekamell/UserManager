@@ -1,6 +1,14 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
+
+<legend>Users list</legend>
 <a href="add" class="btn btn-primary">Add user</a>
-<h1>User list</h1>
+
+<s:form action="find" theme="bootstrap" cssClass="form-inline pull-right">
+    <s:textfield name="query" placeholder="Search by login | phone number" />
+    <s:submit cssClass="btn btn-default" value="Search"/>
+</s:form>
+
+<br /><br />
 <table class="table table-striped">
     <tr>
         <th>#</th>
@@ -25,8 +33,12 @@
             <td><s:property value="email" /></td>
             <td><s:property value="phoneNumber" /></td>
             <td>
-                <span class="glyphicon glyphicon-edit"></span>
-                <span class="glyphicon glyphicon-trash"></span>
+                <a href="/edit?id=<s:property value="id" />">
+                    <span class="glyphicon glyphicon-edit"></span>
+                </a>
+                <a href="/delete?id=<s:property value="id" />">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </a>
             </td>
         </tr>
 

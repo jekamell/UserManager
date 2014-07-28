@@ -10,21 +10,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="JekaMell">
     <title>UserManager :: <tiles:insertAttribute name="title" ignore="true" /></title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <%--<link rel="stylesheet" href="/resources/css/bootstrap.min.css">--%>
+    <link rel="stylesheet" type="text/css" href="/resources/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
 
-    <link type="text/css" rel="stylesheet" href="<s:url value="/resources/css/style.css" />"/>
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="/resources/js/jquery.min.js"></script>
+    <script src="/resources/js/bootstrap.min.js"></script>
 
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="/resources/js/html5.js"></script>
     <![endif]-->
 
     <sb:head/>
+    <s:head />
 </head>
 <body>
     <tiles:insertAttribute name="header" />

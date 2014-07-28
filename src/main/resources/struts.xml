@@ -4,31 +4,49 @@
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-    <package name="userBean-manager" extends="struts-default">
+    <package name="user-manager" extends="struts-default">
         <result-types>
             <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
         </result-types>
 
-        <action name="*" class="com.soft.usermanager.action.UserManagerAction" method="listUsers" >
+        <action name="*" class="com.soft.usermanager.action.UsersList" method="listUsers" >
             <result name="success" type="tiles">showList.tiles</result>
         </action>
         
-        <action name="list" class="com.soft.usermanager.action.UserManagerAction" method="listUsers" >
+        <action name="list" class="com.soft.usermanager.action.UsersList" method="listUsers" >
             <result name="success" type="tiles">showList.tiles</result>
         </action>
 
-        <action name="/" class="com.soft.usermanager.action.UserManagerAction" method="listUsers" >
+        <action name="/" class="com.soft.usermanager.action.UsersList" method="listUsers" >
             <result name="success" type="tiles">showList.tiles</result>
         </action>
 
-        <action name="add" class="com.soft.usermanager.action.UserManagerAction" method="getAddForm">
+        <action name="add" class="com.soft.usermanager.action.FormAdd" method="execute">
             <result name="success" type="tiles">showAddForm.tiles</result>
         </action>
 
-        <action name="reg" class="com.soft.usermanager.action.RegisterAction" method="execute">
+        <action name="edit" class="com.soft.usermanager.action.FormEdit" method="execute">
+            <result name="success" type="tiles">showEditForm.tiles</result>
+            <result name="input" type="tiles">showEditForm.tiles</result>
+        </action>
+
+        <action name="edit-user" class="com.soft.usermanager.action.Update" method="execute">
+            <result name="success" type="tiles">showEditForm.tiles</result>
+            <result name="input" type="tiles">showEditForm.tiles</result>
+        </action>
+
+        <action name="delete" class="com.soft.usermanager.action.Del" method="execute">
+            <result name="success" type="redirectAction">list</result>
+            <result name="input" type="redirectAction">list</result>
+        </action>
+
+        <action name="reg" class="com.soft.usermanager.action.Register" method="execute">
+            <result name="success" type="redirectAction">list</result>
+            <result name="input" type="tiles">showAddForm.tiles</result>
+        </action>
+
+        <action name="find" class="com.soft.usermanager.action.Search" method="execute">
             <result name="success" type="tiles">showList.tiles</result>
-            <result name="error" type="tiles">showAddForm.tiles</result>
-            <result name="input" type="tiles">showList.tiles</result>
         </action>
     </package>
 </struts>
